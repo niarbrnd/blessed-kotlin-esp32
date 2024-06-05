@@ -4,10 +4,12 @@ import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -31,6 +33,11 @@ class MainActivity : ComponentActivity() {
 
                     val measurementText = BluetoothHandler.measurementFlow.collectAsState()
                     Text(text = measurementText.value, fontSize = 24.sp)
+                }
+                Column {
+                    Button(onClick = { Toast.makeText(applicationContext, "test press button", Toast.LENGTH_SHORT).show() }) {
+
+                    }
                 }
             }
         }
