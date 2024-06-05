@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                 }
                 Column {
                     Button(onClick = { Toast.makeText(applicationContext, "test press button", Toast.LENGTH_SHORT).show() }) {
-
+                        Text(text = "scan BLE", fontSize = 24.sp)
                     }
                 }
             }
